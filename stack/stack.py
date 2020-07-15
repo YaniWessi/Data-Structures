@@ -45,20 +45,20 @@ return elements in Last In First Out order.
 #     return self.storage.pop()
 
 class Stack:
-    def __inite__(self):
+    def __init__(self):
         self.size = 0
-        self.storage = LinkedList
+        self.storage = LinkedList()
 
     def __len__(self):
         return self.size
 
     def push(self, value):
-        self.storage.tail.append(value)
+        self.storage.add_to_tail(value)
         self.size += 1
 
     def pop(self):
-        if not self.size:
+        if self.size == 0:
             return None
 
         self.size -= 1
-        return self.storage.tail.pop()
+        return self.storage.remove_tail()
